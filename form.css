@@ -1,0 +1,68 @@
+fieldset {
+    margin: 1em;
+    background-color: lightblue;
+}
+
+legend {
+    display: inline;
+    background-color: aliceblue;
+}
+
+.noshow {
+    background-color: #ed9c28;
+}
+
+.shortTextInput {
+    width: 160px;
+    height: 16px;
+    padding: 2px;
+    margin: 4px;
+    margin-left: 1em;
+    margin-right: 2em;
+    border: 0;
+    vertical-align: middle;
+}
+
+.longTextInput {
+    width: 640px;
+    margin-left: 1em;
+    margin-right: 2em;
+}
+
+.ingredientNameField {
+    width: 360px;
+    height: 16px;
+    padding: 2px;
+    margin: 4px;
+    margin-left: 1em;
+    margin-right: 2em;
+    border: 0;
+    font-family: sans-serif;
+    font-size: small;
+    top: 0.2em;
+    vertical-align: middle;
+}
+
+.generalTextField {
+    width: 560px;
+    height: 120px;
+    padding: 2px;
+    margin: 2px;
+    margin-right: 2em;
+    border: 0;
+    font-family: sans-serif;
+    font-size: small;
+    top: 0.2em;
+}
+
+.generalTextFieldSmall {
+    width: 560px;
+    height: 60px;
+    padding: 2px;
+    margin: 2px;
+    margin-right: 2em;
+    border: 0;
+    font-family: sans-serif;
+    font-size: small;
+    top: 0.2em;
+}

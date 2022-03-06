@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE descriptor SYSTEM "file:///c:/users/nlutt/documents/Websites/tools/entities.dtd">
+<fr:descriptor xmlns:fr="http://fruschtique.de/ns/recipe" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fruschtique.de/ns/recipe recipe.xsd">
+    <fr:book>kochbuch</fr:book>
+    <fr:fullTitle>fruschtique - Das Kochbuch</fr:fullTitle>
+    <fr:path>file:///C:/Users/nlutt/Documents/Websites/kochbuch/</fr:path>
+    <fr:logo>img/logos/fruschtique Logo grau transparent.png</fr:logo>
+    <fr:about01>
+        <fr:headline>Über das Kochbuch</fr:headline>
+        <fr:fragment>fragments/html-about_cookbook.html</fr:fragment>
+    </fr:about01>
+    <fr:about02>
+        <fr:headline>Über mich</fr:headline>
+        <fr:fragment>fragments/html-about_author.html</fr:fragment>
+    </fr:about02>
+    <fr:about03>
+        <fr:headline>Gebrauchsanweisung</fr:headline>
+        <fr:fragment>fragments/html-help.html</fr:fragment>
+    </fr:about03>
+    <fr:about04>
+        <fr:headline>Making of &hellip;</fr:headline>
+        <fr:fragment>blog_posts</fr:fragment>
+    </fr:about04>
+    <fr:about05>
+        <fr:headline>Versionsgeschichte</fr:headline>
+        <fr:fragment>version_history</fr:fragment>
+    </fr:about05>
+    <fr:about06>
+        <fr:headline>Impressum</fr:headline>
+        <fr:fragment>fragments/html-impressum.html</fr:fragment>
+    </fr:about06>
+</fr:descriptor>
