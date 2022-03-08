@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE descriptor SYSTEM "file:///c:/users/nlutt/documents/Websites/tools/entities.dtd">
-<fr:descriptor xmlns:fr="http://fruschtique.de/ns/recipe" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fruschtique.de/ns/recipe recipe.xsd">
-    <fr:book>kochbuch</fr:book>
-    <fr:fullTitle>fruschtique - Das Kochbuch</fr:fullTitle>
-    <fr:path>file:///C:/Users/nlutt/Documents/Websites/kochbuch/</fr:path>
+<fr:descriptor xmlns:fr="http://fruschtique.de/ns/recipe" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fruschtique.de/ns/recipe ../../tools/recipe.xsd">
+    <fr:book>Sammlung_2022</fr:book>
+    <fr:fullTitle>fruschtique - Sammlung 2022</fr:fullTitle>
+    <fr:path>file:///C:/Users/nlutt/Documents/Websites/Sammlung_2022/</fr:path>
     <fr:logo>img/logos/fruschtique Logo grau transparent.png</fr:logo>
     <fr:about01>
         <fr:headline>Über das Kochbuch</fr:headline>
