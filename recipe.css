@@ -203,6 +203,10 @@ p:first-of-type {
     text-indent: 0;
 }
 
+dd:first-of-type {
+    text-indent: 0;
+}
+
 dt+dd {
     text-indent: 0;
 }
