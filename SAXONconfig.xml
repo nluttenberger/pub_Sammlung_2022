@@ -1,3 +1,0 @@
-<configuration edition="PE" xmlns="http://saxon.sf.net/ns/configuration">
-     <global suppressXsltNamespaceCheck="true"/>
-</configuration>
