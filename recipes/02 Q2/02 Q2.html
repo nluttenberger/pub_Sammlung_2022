@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
+
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">       
        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
        <meta name="viewport" content="width=device-width, initial-scale=1" />
-       <title>Über das Kochbuch</title>
+       <title>02 Q2</title>
               
        <!-- base -->
        <!--<base href="file:///C:/Users/nlutt/Documents/Websites/Sammlung_2022/experimental/">-->
@@ -20,10 +21,12 @@
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
        <script src="js/wordcloud2.js"></script>
        <script src="js/lodash.min.js"></script>
+
 </head>
+
    <body>
       <div class="boxtainer"><div class="title">
-    <h1>Über das Kochbuch</h1>
+    <h1>Q2</h1>
 </div>
 
 <div class="logo">
@@ -34,8 +37,8 @@
     </div>
     <div>
         <ul class="nav-top">
-            <!-- eins -->
-            <!-- zwei -->
+            <li class='nav-item' title='zurückblättern'><a rel='prev' href='recipes/01%20Q1/Zucchini-Puffer%20mit%20Joghurt-Dill-Sauce.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-backward.png' alt='zurück' /></a></li>
+            <li class='nav-item' title='weiterblättern'><a rel='next' href='recipes/02%20Q2/Schwarzwurzeln%20mit%20Bratkartoffeln.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-forward.png' alt='weiter' /></a></li>
             <!-- drei -->
             <li class="nav-item">
                 <a href="nav/book-toc.html">
@@ -74,7 +77,55 @@
     </div>
 </div>
 
-         <div class="full"></div>
+         <div class="l-big">
+            <div id="sourrounding_div" style="width: 100%;"><canvas id="canvas_cloud"></canvas></div>
+         </div>
+         <div class="r-small">
+            <ul>
+               <li><a href="recipes/02 Q2/Schwarzwurzeln mit Bratkartoffeln.html">Schwarzwurzeln mit Bratkartoffeln</a></li>
+               <li><a href="recipes/02 Q2/Spaghetti mit B%C3%A4rlauchpesto.html">Spaghetti mit Bärlauchpesto</a></li>
+               <li><a href="recipes/02 Q2/Zwiebelkuchen.html">Zwiebelkuchen</a></li>
+            </ul>
+         </div>
       </div>
-   </body>
+<script>
+                        
+                        $('#flyIn').click(function() {
+                        $('article').toggleClass('stretchLeft stretchRight');
+                        $('article').css("visibility", "visible");
+                        }); 
+                        
+                                                    
+                            var div = document.getElementById('sourrounding_div');                                    
+                            var canvas = document.getElementById('canvas_cloud');
+                            var options = {
+                                list : [ 
+                                
+                                    ["Nudeln", "1"],
+                                    ["Bärlauch", "1"],
+                                    ["Pinienkerne", "1"],
+                                    ["Parmesan", "1"],
+                                    ["Zwiebeln", "1"],
+                                    ["Speck", "1"],
+                                    ["Kümmel", "1"],
+                                ],
+                                gridSize: Math.round(16 * $('#canvas_cloud').width() / 800),
+                                weightFactor: function (size) {return Math.pow(size, 2.3) * $('#canvas_cloud').width() / 800;},
+                                fontFamily: 'Indie Flower, cursive',
+                                fontWeight: 600,
+                                rotateRatio: 0.5,
+                                rotationSteps: 6,
+                                color: 'random-dark',
+                                shape: 'square',
+                                weightFactor: 30 
+                                };
+                                
+                            function wc() {  
+                                canvas.height = div.offsetWidth;                                   
+                                canvas.width  = div.offsetWidth;  
+                                WordCloud(document.getElementById('canvas_cloud'), options); }
+                                
+                            $(document).ready(wc());
+                            window.addEventListener('resize', _.debounce(wc, 640));
+                        </script></body>
 </html>
