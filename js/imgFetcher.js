@@ -71,7 +71,8 @@ function fetchResource(recipeName) {
   path2Thumb += recipeName.substring(recipeName.indexOf('/') + 1);
   path2Thumb += '.jpg';
   fetch(path2Thumb, {
-    cache: "no-store"
+    cache: "no-store",
+    mode: "cors"
   })
     .then(function (response) {
       if (!response.ok) {
