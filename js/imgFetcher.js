@@ -60,8 +60,8 @@
 ]*/
 
 // keep in mind: img and thumbs pathes don't include chapter info
-const basePathThumbs = 'https://storage.googleapis.com/testx.fruschtique.de/thumbs/';
-const basePathImg = 'https://storage.googleapis.com/testx.fruschtique.de/img/';
+const basePathThumbs = 'http://testx.fruschtique.de/thumbs/';
+const basePathImg = 'http://testx.fruschtique.de/img/';
 const basePathRecipes = 'https://menu-22.fruschtique.de/recipes/'
 let i = 0;
 let innerCarousel = document.getElementById ('inner');
