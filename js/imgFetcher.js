@@ -71,19 +71,20 @@ function fetchResource(recipeName) {
 	path2Thumb += recipeName.substring(recipeName.indexOf('/') + 1);
 	path2Thumb += '.jpg';
 	fetch(path2Thumb, {
-		cache: "no-store"
-	}).then(function (response) {
-		if (!response.ok) {
-			throw new Error(`Error - Status: $ {
-                response.status
-            }
-            `);
-		}
-		return response.blob();
-	}).then((resp) => {
-		const imgUrl = URL.createObjectURL(resp);
-		buildCarousel(i++, recipeName, imgUrl);
-	}).catch(function (err) {})
+		cache: "no-store",
+		mode: "cors"
+	})
+		.then(function (response) {
+			if (!response.ok) {
+				throw new Error(`Error - Status: ${response.status}`);
+			}
+			return response.blob();
+	})
+		.then((resp) => {
+			const imgUrl = URL.createObjectURL(resp);
+			buildCarousel(i++, recipeName, imgUrl);
+	})
+		.catch(function (err) {})
 }
 // add image to carousel
 function buildCarousel(i, recipeName, imgUrl) {
