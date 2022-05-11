@@ -82,6 +82,7 @@ function fetchResource(recipeName) {
 	})
 		.then((resp) => {
 			const imgUrl = URL.createObjectURL(resp);
+			console.log (i);
 			buildCarousel(i++, recipeName, imgUrl);
 	})
 		.catch(function (err) {})
