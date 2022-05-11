@@ -88,6 +88,7 @@ function fetchResource(recipeName) {
 }
 // add image to carousel
 function buildCarousel(i, recipeName, imgUrl) {
+	console.log (i);
 	const imgDiv = document.createElement('div');
 	imgDiv.className = 'item';
 	const linkEl = document.createElement('a');
