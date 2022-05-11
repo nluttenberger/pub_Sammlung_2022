@@ -85,7 +85,9 @@ function fetchResource(recipeName) {
 			console.log (i);
 			buildCarousel(i++, recipeName, imgUrl);
 	})
-		.catch(function (err) {})
+		.catch(function (err) {
+	console.log (err);
+	})
 }
 // add image to carousel
 function buildCarousel(i, recipeName, imgUrl) {
