@@ -94,6 +94,7 @@ function buildCarousel(i, recipeName, imgUrl) {
 	linkEl.href = basePathRecipes + recipeName + '.html';
 	linkEl.target = '_blank';
 	const imageEl = document.createElement('img');
+	console.log (imgUrl)
 	imageEl.src = imgUrl;
 	linkEl.appendChild(imageEl);
 	imgDiv.appendChild(linkEl);
