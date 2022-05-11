@@ -75,7 +75,7 @@ function fetchResource(recipeName) {
 		mode: "no-cors"
 	})
 		.then(function (response) {
-			if (response.ok || response === 0) {
+			if (response.ok || response.status === '0') {
 				return response.blob();
 			} else {
 				throw new Error(`Error with status code: ${response.status}`);
