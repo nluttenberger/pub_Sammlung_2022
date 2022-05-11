@@ -116,7 +116,6 @@ url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents`;
 fetch(url_str, {
 	headers: hdrs
 }).then(resp => {
-	console.log ('xx ',resp.status, resp.statusText)
 	return resp.json();
 }).then(data => {
 	let ix = data.indexOf(data.filter(function (item) {
