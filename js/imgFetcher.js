@@ -74,7 +74,9 @@ function fetchResource(recipeName) {
 		cache: "no-store"
 	})
 		.then((response) => {
-			console.log (response)
+			if (!response.ok) {
+				throw new Error('Could not read image');
+			}
 			return response.blob()
 		})
 		.then((resp) => {
