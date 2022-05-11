@@ -75,14 +75,14 @@ function fetchResource(recipeName) {
 		mode: "no-cors"
 	})
 		.then(function (response) {
-			if (!response.ok) {
-				throw new Error(`Error - Status: ${response.status}`);
+			if (response.ok || response === 0) {
+				return response.blob();
+			} else {
+				throw new Error(`Error with status code: ${response.status}`);
 			}
-			return response.blob();
 	})
 		.then((resp) => {
 			const imgUrl = URL.createObjectURL(resp);
-			console.log (i);
 			buildCarousel(i++, recipeName, imgUrl);
 	})
 		.catch(function (err) {
