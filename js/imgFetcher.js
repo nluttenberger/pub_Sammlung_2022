@@ -72,7 +72,7 @@ function fetchResource(recipeName) {
 	path2Thumb += '.jpg';
 	fetch(path2Thumb, {
 		cache: "no-store",
-		mode: "cors"
+		mode: "no-cors"
 	})
 		.then(function (response) {
 			if (!response.ok) {
