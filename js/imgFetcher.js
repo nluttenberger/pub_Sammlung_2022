@@ -74,9 +74,10 @@ function fetchResource(recipeName) {
 		cache: "no-store",
 		mode: "no-cors"
 	})
-		.then(function (response) {
-			return response.blob();
-	})
+		.then((response) => {
+			console.log (repsonse)
+			return response.blob()
+		})
 		.then((resp) => {
 			const imgUrl = URL.createObjectURL(resp);
 			buildCarousel(i++, recipeName, imgUrl);
@@ -87,14 +88,12 @@ function fetchResource(recipeName) {
 }
 // add image to carousel
 function buildCarousel(i, recipeName, imgUrl) {
-	console.log (i);
 	const imgDiv = document.createElement('div');
 	imgDiv.className = 'item';
 	const linkEl = document.createElement('a');
 	linkEl.href = basePathRecipes + recipeName + '.html';
 	linkEl.target = '_blank';
 	const imageEl = document.createElement('img');
-	console.log (imgUrl)
 	imageEl.src = imgUrl;
 	linkEl.appendChild(imageEl);
 	imgDiv.appendChild(linkEl);
