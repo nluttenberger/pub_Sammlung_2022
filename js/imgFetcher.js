@@ -75,7 +75,7 @@ function fetchResource(recipeName) {
 		mode: "no-cors"
 	})
 		.then((response) => {
-			console.log (repsonse)
+			console.log (response)
 			return response.blob()
 		})
 		.then((resp) => {
