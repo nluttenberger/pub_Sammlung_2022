@@ -111,7 +111,12 @@ hdrs = {
 }
 // create list of recipes
 let url_str;
-let myColl = 'Sammlung_2022';
+let myColl;
+myColl = window.location.hostname;
+console.log (myColl);
+
+
+myColl = 'Sammlung_2022';
 url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents`;
 fetch(url_str, {
 	headers: hdrs
