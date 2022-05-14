@@ -164,7 +164,6 @@ let oLength = document.getElementById(myCat).options.length;
  arr.push (document.getElementById(myCat).options[i].value);
  }
  console.log (arr);
- const ulist = document.getElementsByClassName('')
- for (let rcp of arr) {
-
- }
+ const ulist = document.getElementById('catRcpList');
+ let x;
+ 
