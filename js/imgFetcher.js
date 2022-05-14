@@ -164,7 +164,8 @@ let oLength = document.getElementById(myCat).options.length;
  arr.push (document.getElementById(myCat).options[i].value);
  }
  let x;
+let myBase = window.location.origin;
 for (let rcp of arr) {
-	x = `<li>${rcp}</li>`;
+	x = `<li><a href="${myBase}/recipes/${rcp}.html" target="_blank"> ${rcp}</a></li>`;
 	$('#catRcpList').append(x);
 }
