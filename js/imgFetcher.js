@@ -113,7 +113,9 @@ hdrs = {
 let url_str;
 let myColl;
 myColl = window.location.hostname;
-console.log (myColl.substring(0,myColl.indexOf('.')-1));
+myColl = myColl.substring(0,myColl.indexOf('.'));
+myColl = `pub_${myColl}`;
+console.log (myColl);
 
 
 myColl = 'Sammlung_2022';
