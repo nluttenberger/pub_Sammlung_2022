@@ -105,7 +105,7 @@ function buildCarousel(i, recipeName, imgUrl) {
 	}
 }
 // start here onload
-apiKey = localStorage.getItem('apiKey');
+/*apiKey = localStorage.getItem('apiKey');
 hdrs = {
 	'Accept': 'application/vnd.github.v3+json',
 	'Authorization': apiKey
@@ -153,7 +153,7 @@ fetch(url_str, {
 	})
 }).catch((error) => {
 	console.log('Error while reading collection sha:', error);
-})
+})*/
 
 /*let oLength = document.getElementById('allRecipesList').options.length;
  let arr = [];
