@@ -142,9 +142,8 @@ fetch(url_str, {
 		let re = /^\d\d /;
 		for (let entry of tree) {
 			recp = entry.path;
-			recp = recp.substring(0, recp.indexOf('.xml'))
-			let xx = recp.substring(recp.indexOf('/')+1)
-			console.log (xx);
+			recp = recp.substring(0, recp.indexOf('.xml'));
+			let xx = recp.substring(recp.indexOf('/')+1);
 			if (recp.length > 0 && xx.match(re)===null) {
 				fetchResource(recp);
 			}
