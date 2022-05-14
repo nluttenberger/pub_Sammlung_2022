@@ -139,10 +139,13 @@ fetch(url_str, {
 			return a.path.localeCompare(b.path, 'de-DE-1996')
 		});
 		let recp;
+		let re = /^\d\d /;
 		for (let entry of tree) {
 			recp = entry.path;
 			recp = recp.substring(0, recp.indexOf('.xml'))
-			fetchResource(recp);
+			if (recp.length > 0 && recp.match(re)===null) {
+				fetchResource(recp);
+			}
 		}
 	}).catch((error) => {
 		console.log('Error while reading directory listings:', error);
