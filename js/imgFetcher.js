@@ -154,12 +154,17 @@ fetch(url_str, {
 }).catch((error) => {
 	console.log('Error while reading collection sha:', error);
 })*/
-
-/*let oLength = document.getElementById('allRecipesList').options.length;
+let myCat;
+myCat = window.location.pathname;
+myCat = decodeURI(myCat.substring(myCat.lastIndexOf('-')+1));
+myCat = myCat.substring(0,myCat.indexOf('.html'))
+let oLength = document.getElementById(myCat).options.length;
  let arr = [];
- let x;
  for (let i=0;i<oLength;i++) {
- x = document.getElementById('allRecipesList').options[i].value;
- arr.push (x);
+ arr.push (document.getElementById(myCat).options[i].value);
  }
- console.log (arr);*/
+ console.log (arr);
+ const ulist = document.getElementsByClassName('')
+ for (let rcp of arr) {
+
+ }
