@@ -163,7 +163,8 @@ let oLength = document.getElementById(myCat).options.length;
  for (let i=0;i<oLength;i++) {
  arr.push (document.getElementById(myCat).options[i].value);
  }
- console.log (arr);
- const ulist = document.getElementById('catRcpList');
  let x;
- 
+for (let rcp of arr) {
+	x = `<li>${rcp}</li>`;
+	$('#catRcpList').append(x);
+}
