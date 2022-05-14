@@ -114,7 +114,6 @@ let url_str;
 let myColl;
 myColl = window.location.hostname;
 myColl = myColl.substring(0,myColl.indexOf('.'));
-myColl = `pub_${myColl}`;
 console.log (myColl);
 
 url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents`;
