@@ -38,7 +38,13 @@ function buildCarousel(i, recipeName, imgUrl) {
 	imageEl.src = imgUrl;
 	linkEl.appendChild(imageEl);
 	imgDiv.appendChild(linkEl);
+	const captionDiv = document.createElement('div');
+	captionDiv.className = 'carousel-caption';
+	const caption = document.createElement ('h3');
+	caption.textContent = recipeName;
+	captionDiv.appendChild(caption);
 	innerCarousel.appendChild(imgDiv);
+	innerCarousel.appendChild(captionDiv);
 	if (i === 0) {
 		imgDiv.classList.add('active')
 	}
