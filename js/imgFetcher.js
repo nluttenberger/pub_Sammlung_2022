@@ -42,7 +42,7 @@ function buildCarousel(i,recipe,imgUrl) {
 	const captionDiv = document.createElement('div');
 	captionDiv.className = 'carousel-caption';
 	const caption = document.createElement ('h3');
-	caption.textContent = recipe;
+	caption.textContent = recipe.substring(recipe.indexOf('/') + 1);
 	captionDiv.appendChild(caption);
 	imgDiv.appendChild(captionDiv);
 	innerCarousel.appendChild(imgDiv);
@@ -50,8 +50,7 @@ function buildCarousel(i,recipe,imgUrl) {
 		imgDiv.classList.add('active')
 	}
 }
-
-// keep in mind: img and thumbs paths don't include chapter info
+// keep in mind: img and thumbs paths don't need chapter info
 let myCat;
 myCat = window.location.pathname;
 myCat = decodeURI(myCat.substring(myCat.lastIndexOf('-')+1));
