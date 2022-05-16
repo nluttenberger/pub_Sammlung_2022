@@ -54,16 +54,11 @@ let rcpArr = [];
 for (let i=0;i<oLength;i++) {
 	rcpArr.push (document.getElementById(myCat).options[i].value);
 }
-// set links to recipes
+// set links to recipes and get recipe images
 let x;
 let myBase = window.location.origin;
 for (let rcp of rcpArr) {
 	x = `<li><a href="${myBase}/recipes/${rcp}.html" target="_blank"> ${rcp}</a></li>`;
 	$('#catRcpList').append(x);
-}
-// get recipe images
-for (let rcp of rcpArr) {
-	rcp = rcp.substring(rcp.indexOf('/')+1);
 	fetchResource(rcp);
 }
-
