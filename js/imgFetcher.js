@@ -63,10 +63,7 @@ for (let rcp of rcpArr) {
 }
 // get recipe images
 for (let rcp of rcpArr) {
-	recp = recp.substring(0, recp.indexOf('.xml'));
-	let xx = recp.substring(recp.indexOf('/')+1);
-	if (rcp.length > 0 && xx.match(re)===null) {
-		fetchResource(recp);
-	}
+	rcp = rcp.substring(rcp.indexOf('/')+1);
+	fetchResource(rcp);
 }
 
