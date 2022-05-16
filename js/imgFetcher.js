@@ -10,7 +10,6 @@ function fetchResource(recipe) {
 	let rcpName = recipe.substring(recipe.indexOf('/') + 1);
 	path2Img += rcpName;
 	path2Img += '.jpg';
-	console.log (path2Img);
 	fetch(path2Img, {
 		cache: "no-store"
 	})
