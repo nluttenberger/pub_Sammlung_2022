@@ -7,10 +7,10 @@ let innerCarousel = document.getElementById('inner');
 // get image
 function fetchResource(recipeName) {
 	let path2Img = basePathImg;
-	path2Img += recipeName.substring(recipeName.indexOf('/') + 1);
+	path2Img += recipeName;
 	path2Img += '.jpg';
 	console.log (path2Img);
-	/*fetch(path2Thumb, {
+	fetch(path2Img, {
 		cache: "no-store"
 	})
 		.then((response) => {
@@ -25,7 +25,7 @@ function fetchResource(recipeName) {
 	})
 		.catch(function (err) {
 			console.log (err);
-	})*/
+	})
 }
 // add image to carousel
 function buildCarousel(i, recipeName, imgUrl) {
@@ -43,7 +43,7 @@ function buildCarousel(i, recipeName, imgUrl) {
 		imgDiv.classList.add('active')
 	}
 }
-// start here onload
+
 // keep in mind: img and thumbs paths don't include chapter info
 let myCat;
 myCat = window.location.pathname;
@@ -58,7 +58,8 @@ for (let i=0;i<oLength;i++) {
 let x;
 let myBase = window.location.origin;
 for (let rcp of rcpArr) {
-	x = `<li><a href="${myBase}/recipes/${rcp}.html" target="_blank"> ${rcp}</a></li>`;
+	let rcpName = rcp.substring(rcp.indexOf('/') + 1);
+	x = `<li><a href="${myBase}/recipes/${rcp}.html" target="_blank"> ${rcpName}</a></li>`;
 	$('#catRcpList').append(x);
-	fetchResource(rcp);
+	fetchResource(rcpName);
 }
