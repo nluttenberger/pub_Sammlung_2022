@@ -7,7 +7,8 @@ let innerCarousel = document.getElementById('inner');
 // get image
 function fetchResource(recipeName) {
 	let path2Img = basePathImg;
-	path2Img += recipeName;
+	let rcpName = rcp.substring(rcp.indexOf('/') + 1);
+	path2Img += rcpName;
 	path2Img += '.jpg';
 	console.log (path2Img);
 	fetch(path2Img, {
@@ -67,5 +68,5 @@ for (let rcp of rcpArr) {
 	let rcpName = rcp.substring(rcp.indexOf('/') + 1);
 	x = `<li><a href="${myBase}/recipes/${rcp}.html" target="_blank"> ${rcpName}</a></li>`;
 	$('#catRcpList').append(x);
-	fetchResource(rcpName);
+	fetchResource(rcp);
 }
