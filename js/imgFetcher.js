@@ -5,9 +5,9 @@ let i = 0;
 let innerCarousel = document.getElementById('inner');
 
 // get image
-function fetchResource(recipeName) {
+function fetchResource(recipe) {
 	let path2Img = basePathImg;
-	let rcpName = rcp.substring(rcp.indexOf('/') + 1);
+	let rcpName = recipe.substring(recipe.indexOf('/') + 1);
 	path2Img += rcpName;
 	path2Img += '.jpg';
 	console.log (path2Img);
@@ -22,18 +22,18 @@ function fetchResource(recipeName) {
 		})
 		.then((resp) => {
 			const imgUrl = URL.createObjectURL(resp);
-			buildCarousel(i++, recipeName, imgUrl);
+			buildCarousel(i++, recipe, imgUrl);
 	})
 		.catch(function (err) {
 			console.log (err);
 	})
 }
 // add image to carousel
-function buildCarousel(i, recipeName, imgUrl) {
+function buildCarousel(i,recipe,imgUrl) {
 	const imgDiv = document.createElement('div');
 	imgDiv.className = 'item';
 	const linkEl = document.createElement('a');
-	linkEl.href = basePathRecipes + recipeName + '.html';
+	linkEl.href = basePathRecipes + recipe + '.html';
 	linkEl.target = '_blank';
 	const imageEl = document.createElement('img');
 	imageEl.src = imgUrl;
@@ -42,7 +42,7 @@ function buildCarousel(i, recipeName, imgUrl) {
 	const captionDiv = document.createElement('div');
 	captionDiv.className = 'carousel-caption';
 	const caption = document.createElement ('h3');
-	caption.textContent = recipeName;
+	caption.textContent = recipe;
 	captionDiv.appendChild(caption);
 	imgDiv.appendChild(captionDiv);
 	innerCarousel.appendChild(imgDiv);
