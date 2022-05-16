@@ -1,77 +1,16 @@
-/*const recipeNames = [
- '01 Q1/Blumenkohl-Fenchel-Suppe mit Madras-Curry und Brezelcroutons',
- '01 Q1/Blumenkohl-Nudel-Auflauf',
- '01 Q1/Bohnen mit Schafskäse',
- '01 Q1/Brokkoli-Nudel-Auflauf',
- '01 Q1/Chicorée mit Schinken',
- '01 Q1/Chinesisch gebratene Nudeln mit Hühnchenfleisch, Ei und Gemüse',
- '01 Q1/Dolma mit Minze-Bulgur',
- '01 Q1/Eier in Senfsauce mit Bratkartoffeln',
- '01 Q1/Fettucine mit Lachs-Mohn-Sauce',
- '01 Q1/Fischfilet paniert mit Estragon-Karotten',
- '01 Q1/Fusilli mit Tomatensauce',
- '01 Q1/Gemüse-Curry',
- '01 Q1/Griechischer Salat',
- '01 Q1/Heringssalat mit Pellka',
- '01 Q1/Huhn in Kokos-Gemüsesauce mit Nudeln',
- '01 Q1/Kasseler Lachs mit Polenta',
- '01 Q1/Kohl-Karotten-Quiche',
- '01 Q1/Kokos-Zitronen-Hähnchen',
- '01 Q1/Lachsfilet mit Fenchel-Orangen-Gemüse',
- '01 Q1/Minestrone',
- '01 Q1/Moules à la provençale',
- '01 Q1/Pardulas – süße und herzhafte',
- '01 Q1/Peperoncini alla turca',
- '01 Q1/Pizza',
- '01 Q1/Ragout fruschtique',
- '01 Q1/Rote Bete-Salat mit Bratkartoffeln und Spiegelei',
- '01 Q1/Rührei mit Pilzen, Paprika und Speck',
- '01 Q1/Sauerkraut-Rahmsuppe mit Brezel-Croûtons',
- '01 Q1/Spaghetti mit Pesto rosso',
- '01 Q1/Spaghetti mit Tomatensugo',
- '01 Q1/Spinat-Pfannkuchen mit Lauchgemüse',
- '01 Q1/Spitzkohlsalat',
- '01 Q1/Tom Khaa Kai',
- '01 Q1/Tortilla de Chili y Culantro',
- '01 Q1/Überbackener Fenchel',
- '01 Q1/Vialla-Nudeln mit Rapunzel-Pesto',
- '01 Q1/Wraps',
- '01 Q1/Zucchini-Puffer mit Joghurt-Dill-Sauce',
- '02 Q2/Artischocken mit Joghurt-Dill-Sauce',
- '02 Q2/Bohnensuppe',
- '02 Q2/Butter Chicken mit Naan',
- '02 Q2/Entenbrust mit Spitzkohl und Semmelknödeln',
- '02 Q2/Fettucine mit Lachs-Mohn-Sauce',
- '02 Q2/Fischfilet paniert mit Estragon-Karotten',
- '02 Q2/Gemüse-Curry',
- '02 Q2/Handkäs mit Musik',
- '02 Q2/Huhn in Kokos-Gemüsesauce mit Nudeln',
- '02 Q2/Lauchkuchen vom Blech',
- '02 Q2/Minestrone',
- '02 Q2/Putengeschnetzeltes Szechuan',
- '02 Q2/Ravioli in Tomatensauce',
- '02 Q2/Schwarzwurzeln mit Bratkartoffeln',
- '02 Q2/Schweinefilet im Blätterteig',
- '02 Q2/Spaghetti mit Bärlauchpesto',
- '02 Q2/Spinat-Quiche',
- '02 Q2/Sülze mit Bratkartoffeln und Karotten-Fenchel-Salat',
- '02 Q2/Wraps',
- '02 Q2/Zwiebelkuchen'
- ]*/
-
-// keep in mind: img and thumbs pathes don't include chapter info
 const basePathThumbs = 'https://storage.googleapis.com/testx.fruschtique.de/thumbs/';
 const basePathImg = 'https://storage.googleapis.com/testx.fruschtique.de/img/';
 const basePathRecipes = 'https://menu-22.fruschtique.de/recipes/'
 let i = 0;
 let innerCarousel = document.getElementById('inner');
+
 // get image
 function fetchResource(recipeName) {
-	let path2Thumb = basePathThumbs;
-	path2Thumb += recipeName.substring(recipeName.indexOf('/') + 1);
-	path2Thumb += '.jpg';
-	console.log (path2Thumb);
-	fetch(path2Thumb, {
+	let path2Img = basePathImg;
+	path2Img += recipeName.substring(recipeName.indexOf('/') + 1);
+	path2Img += '.jpg';
+	console.log (path2Img);
+	/*fetch(path2Thumb, {
 		cache: "no-store"
 	})
 		.then((response) => {
@@ -86,7 +25,7 @@ function fetchResource(recipeName) {
 	})
 		.catch(function (err) {
 			console.log (err);
-	})
+	})*/
 }
 // add image to carousel
 function buildCarousel(i, recipeName, imgUrl) {
@@ -105,67 +44,29 @@ function buildCarousel(i, recipeName, imgUrl) {
 	}
 }
 // start here onload
-/*apiKey = localStorage.getItem('apiKey');
-hdrs = {
-	'Accept': 'application/vnd.github.v3+json',
-	'Authorization': apiKey
-}
-// create list of recipes
-let url_str;
-let myColl;
-myColl = window.location.hostname;
-myColl = myColl.substring(0,myColl.indexOf('.'));
-console.log (myColl);
-
-url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents`;
-fetch(url_str, {
-	headers: hdrs
-}).then(resp => {
-	return resp.json();
-}).then(data => {
-	let ix = data.indexOf(data.filter(function (item) {
-		return item.path === "recipes_xml"
-	})[0])
-	let sha = data[ix].sha;
-	url_str = `https://api.github.com/repos/nluttenberger/${myColl}/git/trees/${sha}?recursive=true`;
-	fetch(url_str, {
-		headers: hdrs
-	}).then(resp => {
-		console.log('Sammlungsindex eingelesen: ', resp.status, resp.statusText);
-		return resp.json()
-	}).then(data => {
-		let tree = data.tree;
-		tree.sort(function (a, b) {
-			return a.path.localeCompare(b.path, 'de-DE-1996')
-		});
-		let recp;
-		let re = /^\d\d /;
-		for (let entry of tree) {
-			recp = entry.path;
-			recp = recp.substring(0, recp.indexOf('.xml'));
-			let xx = recp.substring(recp.indexOf('/')+1);
-			if (recp.length > 0 && xx.match(re)===null) {
-				fetchResource(recp);
-			}
-		}
-	}).catch((error) => {
-		console.log('Error while reading directory listings:', error);
-	})
-}).catch((error) => {
-	console.log('Error while reading collection sha:', error);
-})*/
+// keep in mind: img and thumbs paths don't include chapter info
 let myCat;
 myCat = window.location.pathname;
 myCat = decodeURI(myCat.substring(myCat.lastIndexOf('-')+1));
 myCat = myCat.substring(0,myCat.indexOf('.html'))
 let oLength = document.getElementById(myCat).options.length;
- let arr = [];
- for (let i=0;i<oLength;i++) {
- arr.push (document.getElementById(myCat).options[i].value);
- }
- let x;
+let rcpArr = [];
+for (let i=0;i<oLength;i++) {
+	rcpArr.push (document.getElementById(myCat).options[i].value);
+}
+// set links to recipes
+let x;
 let myBase = window.location.origin;
-for (let rcp of arr) {
+for (let rcp of rcpArr) {
 	x = `<li><a href="${myBase}/recipes/${rcp}.html" target="_blank"> ${rcp}</a></li>`;
 	$('#catRcpList').append(x);
 }
+// get recipe images
+for (let rcp of rcpArr) {
+	recp = recp.substring(0, recp.indexOf('.xml'));
+	let xx = recp.substring(recp.indexOf('/')+1);
+	if (rcp.length > 0 && xx.match(re)===null) {
+		fetchResource(recp);
+	}
+}
+
