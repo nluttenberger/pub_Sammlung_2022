@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Menu-22</title>
+	<!-- base -->
+	<link rel="manifest" href="manifest.json">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="recipe.css" type="text/css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+	<style>
+		html {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			font-family: 'Noto Sans', sans-serif;
+			color: rgb(77, 77, 77);
+			background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.20) 100%),
+				url(assets/cover/Lauch%20waagerecht.jpg) no-repeat top center fixed;
+			background-size: contain;
+		}
+
+		.logo {
+			margin-top: 10vh;
+			grid-area: logo;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.intro-text {
+			margin-top: 4vh;
+			grid-area: intro-text;
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+
+		.link {
+			grid-area: link;
+		}
+
+		.boxtainer {
+			box-sizing: border-box;
+			display: grid;
+			grid-gap: 1px;
+		}
+
+		.signature {
+			margin-top: 0.5em;
+			text-indent: 0;
+		}
+
+		@media screen and (min-width: 280px) {
+			.boxtainer {
+				grid-template-columns: 1fr;
+				grid-template-areas: "logo""link""intro-text";
+				padding: 1em;
+			}
+
+			.link {
+				justify-self: end;
+			}
+		}
+
+		@media screen and (min-width: 480px) {
+			.boxtainer {
+				grid-template-columns: 5fr 1fr 2fr;
+				grid-template-areas: ". logo logo""intro-text intro-text link";
+				padding: 1em;
+			}
+		}
+
+		@media screen and (min-width: 800px) {
+			.boxtainer {
+				grid-template-columns: 12px 5fr 1fr 2fr 12px;
+				grid-template-areas: ". . logo logo ."". intro-text . link .";
+				padding: 1em;
+			}
+
+			.link {
+				justify-self: end;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			.boxtainer {
+				grid-template-columns: auto 600px 120px 240px auto;
+				grid-template-areas: ". . . logo ."". intro-text . link .";
+				padding: 1em;
+			}
+
+			p {
+				font-size: 1.4em;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="boxtainer">
+
+		<div class="logo">
+			<div>
+				<img src="https://storage.googleapis.com/testx.fruschtique.de/logos/fruschtique%20Logo%20grau%20transparent.png" alt="fruschtique" title="fruschtique - Das Kochbuch">
+			</div>
+			<div>
+				<p style="margin-right: 1em; font-weight: 700; color: rgb(77,77,77); font-size: 150%">Menu 2022</p>
+			</div>
+		</div>
+
+		<div class="link">
+			<a href="nav/book-toc.html">
+				<img src="https://storage.googleapis.com/testx.fruschtique.de/icons/arrow-right%20grey.png" alt="Pfeil nach rechts" title="zum Inhaltsverzeichnis" style="margin-right: 1em; width: auto; height: auto; max-width: 100%;">
+			</a>
+		</div>
+
+		<div class="intro-text">
+			<p>Hier schreibe ich alle Rezepte auf, die ich im Lauf des Jahres 2022 koche. Und am Ende des Jahres werde ich daraus einen Zutatengraphen für das Jahr 2022 machen.</p>
+			<p>Bis dahin: Happy reading! Oder noch besser:</p>
+			<p>Happy cooking!</p>
+			<p class="signature">Norbert</p>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
