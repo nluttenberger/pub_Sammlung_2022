@@ -33,7 +33,7 @@
     <div>
         <ul class="nav-top">
             <li class='nav-item' title='zurückblättern'><a rel='prev' href='recipes/02%20Q2/Zwiebelkuchen.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-backward.png' alt='zurück' /></a></li>
-            <li class='nav-item' title='weiterblättern'><a rel='next' href='recipes/03%20Q3/Lauchsuppe%20mit%20Hack.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-forward.png' alt='weiter' /></a></li>
+            <li class='nav-item' title='weiterblättern'><a rel='next' href='recipes/03%20Q3/Bohnensuppe.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-forward.png' alt='weiter' /></a></li>
             <!-- drei -->
             <li class="nav-item">
                 <a href="nav/book-toc.html">
@@ -77,7 +77,9 @@
          </div>
          <div class="r-small">
             <ul>
+               <li><a href="recipes/03 Q3/Bohnensuppe.html">Bohnensuppe</a></li>
                <li><a href="recipes/03 Q3/Lauchsuppe mit Hack.html">Lauchsuppe mit Hack</a></li>
+               <li><a href="recipes/03 Q3/Spaghetti mit Pesto rosso.html">Spaghetti mit Pesto rosso</a></li>
             </ul>
          </div>
       </div>
@@ -94,10 +96,19 @@
                             var options = {
                                 list : [ 
                                 
+                                    ["Bohnen", "1"],
+                                    ["Fleischbrühe", "1"],
+                                    ["Kartoffeln", "1"],
+                                    ["Bohnenkraut", "1"],
                                     ["Lauch", "1"],
                                     ["Hack", "1"],
                                     ["Schmand", "1"],
                                     ["Gemüsebrühe", "1"],
+                                    ["Nudeln", "1"],
+                                    ["Pinienkerne", "1"],
+                                    ["Getrocknete_Tomaten", "1"],
+                                    ["Kapern", "1"],
+                                    ["Parmesan", "1"],
                                 ],
                                 gridSize: Math.round(16 * $('#canvas_cloud').width() / 800),
                                 weightFactor: function (size) {return Math.pow(size, 2.3) * $('#canvas_cloud').width() / 800;},
