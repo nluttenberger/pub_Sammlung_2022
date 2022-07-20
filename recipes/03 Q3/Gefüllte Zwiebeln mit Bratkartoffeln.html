@@ -5,7 +5,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">       
        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
        <meta name="viewport" content="width=device-width, initial-scale=1" />
-       <title>03 Q3</title>
+       <title>Gefüllte Zwiebeln mit Bratkartoffeln</title>
        <base href="https://menu-22.fruschtique.de/">        
        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" >
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
@@ -16,12 +16,29 @@
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
        <script src="js/wordcloud2.js"></script>
        <script src="js/lodash.min.js"></script>
-
+<script type="application/ld+json">
+  { "@context" : "https:\/\/schema.org\/",
+    "@type" : "Recipe",
+    "name" : "Gefüllte Zwiebeln mit Bratkartoffeln",
+    "image" : 
+    [ "http:\/\/kochbuch.fruschtique.de\/img\/beim_Kochen.jpg" ],
+    "author" : 
+    { "@type" : "Person",
+      "name" : "Norbert Luttenberger" },
+    "description" : "",
+    "keywords" : "",
+    "recipeIngredient" : 
+    [ " " ],
+    "recipeInstructions" : 
+    [ 
+      { "@type" : "HowToStep",
+        "text" : "" } ],
+    "isBasedOn" : "" }</script>
 </head>
 
    <body>
       <div class="boxtainer"><div class="title">
-    <h1>Q3</h1>
+    <h1>Gefüllte Zwiebeln mit Bratkartoffeln</h1>
 </div>
 
 <div class="logo">
@@ -32,8 +49,8 @@
     </div>
     <div>
         <ul class="nav-top">
-            <li class='nav-item' title='zurückblättern'><a rel='prev' href='recipes/02%20Q2/Zwiebelkuchen.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-backward.png' alt='zurück' /></a></li>
-            <li class='nav-item' title='weiterblättern'><a rel='next' href='recipes/03%20Q3/Albondigas%20mit%20Tomatensauce.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-forward.png' alt='weiter' /></a></li>
+            <li class='nav-item' title='zurückblättern'><a rel='prev' href='recipes/03%20Q3/Bohnensuppe.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-backward.png' alt='zurück' /></a></li>
+            <li class='nav-item' title='weiterblättern'><a rel='next' href='recipes/03%20Q3/Heringssalat%20mit%20Pellka.html'><img src='https://storage.googleapis.com/testx.fruschtique.de/icons/tile-forward.png' alt='weiter' /></a></li>
             <!-- drei -->
             <li class="nav-item">
                 <a href="nav/book-toc.html">
@@ -72,19 +89,21 @@
     </div>
 </div>
 
-         <div class="l-big">
-            <div id="sourrounding_div" style="width: 100%;"><canvas id="canvas_cloud"></canvas></div>
-         </div>
+         <div class="l-big"><img class="rcpImage" src="https://storage.googleapis.com/testx.fruschtique.de/img/Gef%C3%BCllte%20Zwiebeln%20mit%20Bratkartoffeln.jpg" alt="Rezeptbild" onerror="this.src='https://storage.googleapis.com/testx.fruschtique.de/img/beim_Kochen.jpg'"><a id="flyIn"><img src="https://storage.googleapis.com/testx.fruschtique.de/icons/tile-rcp-text.png" alt="Rezepttext ein-/ausblenden" title="Rezept" class="chevron"></a></div>
          <div class="r-small">
-            <ul>
-               <li><a href="recipes/03 Q3/Albondigas mit Tomatensauce.html">Albondigas mit Tomatensauce</a></li>
-               <li><a href="recipes/03 Q3/Bohnensuppe.html">Bohnensuppe</a></li>
-               <li><a href="recipes/03 Q3/Gef%C3%BCllte Zwiebeln mit Bratkartoffeln.html">Gefüllte Zwiebeln mit Bratkartoffeln</a></li>
-               <li><a href="recipes/03 Q3/Heringssalat mit Pellka.html">Heringssalat mit Pellka</a></li>
-               <li><a href="recipes/03 Q3/Lauchsuppe mit Hack.html">Lauchsuppe mit Hack</a></li>
-               <li><a href="recipes/03 Q3/Schnitzel mit Spitzkohlsalat.html">Schnitzel mit Spitzkohlsalat</a></li>
-               <li><a href="recipes/03 Q3/Spaghetti mit Pesto rosso.html">Spaghetti mit Pesto rosso</a></li>
-            </ul>
+            <article class="stretchRight" style="visibility: hidden;">
+               <section id="recipe-intro"></section>
+<section id="recipe-body">
+               <section id="ingredients">
+                  <table class="ingdtList">
+                     <caption class="ingdtCaption"></caption>
+                     <tr></tr>
+                  </table>
+               </section>
+               <section id="instructions">
+                  <dl></dl>
+               </section>
+</section></article>
          </div>
       </div>
 <script>
@@ -94,46 +113,5 @@
                         $('article').css("visibility", "visible");
                         }); 
                         
-                                                    
-                            var div = document.getElementById('sourrounding_div');                                    
-                            var canvas = document.getElementById('canvas_cloud');
-                            var options = {
-                                list : [ 
-                                
-                                    ["Bohnen", "1"],
-                                    ["Fleischbrühe", "1"],
-                                    ["Kartoffeln", "2"],
-                                    ["Bohnenkraut", "1"],
-                                    ["Hering", "1"],
-                                    ["Apfel", "1"],
-                                    ["Cornichons", "1"],
-                                    ["Lauch", "1"],
-                                    ["Hack", "1"],
-                                    ["Schmand", "1"],
-                                    ["Gemüsebrühe", "1"],
-                                    ["Nudeln", "1"],
-                                    ["Pinienkerne", "1"],
-                                    ["Getrocknete_Tomaten", "1"],
-                                    ["Kapern", "1"],
-                                    ["Parmesan", "1"],
-                                ],
-                                gridSize: Math.round(16 * $('#canvas_cloud').width() / 800),
-                                weightFactor: function (size) {return Math.pow(size, 2.3) * $('#canvas_cloud').width() / 800;},
-                                fontFamily: 'Indie Flower, cursive',
-                                fontWeight: 600,
-                                rotateRatio: 0.5,
-                                rotationSteps: 6,
-                                color: 'random-dark',
-                                shape: 'square',
-                                weightFactor: 30 
-                                };
-                                
-                            function wc() {  
-                                canvas.height = div.offsetWidth;                                   
-                                canvas.width  = div.offsetWidth;  
-                                WordCloud(document.getElementById('canvas_cloud'), options); }
-                                
-                            $(document).ready(wc());
-                            window.addEventListener('resize', _.debounce(wc, 640));
                         </script></body>
 </html>
